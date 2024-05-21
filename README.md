@@ -1,2 +1,3 @@
-# soda_dataquality
-Test the soda data quality platform
+# data quality check
+
+Test the dbt platform
