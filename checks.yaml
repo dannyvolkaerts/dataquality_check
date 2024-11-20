@@ -1,0 +1,8 @@
+checks for sales.order_items:
+  - row_count < 30
+  - total_sales > 10000:
+      total_sales query: |
+        SELECT
+          COUNT(*) as total_sales
+        FROM
+          sales.order_items

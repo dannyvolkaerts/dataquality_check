@@ -1,0 +1,8 @@
+data_source bikestore_db:
+  type: sqlserver
+  host: ${DB_SERVER_SODA}
+  port: '1433'
+  username: ${DB_USER}
+  password: ${DB_PASSWORD}
+  database: ${DB_NAME}
+  driver: ODBC Driver 17 for SQL Server

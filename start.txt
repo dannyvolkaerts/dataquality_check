@@ -1,0 +1,33 @@
+Typically the steps you always takes are:
+
+git clone <repo>
+cd <repo>
+pip install virtualenv (if you don't already have virtualenv installed)
+virtualenv venv to create your new environment (called 'venv' here)
+.venv\Scripts\activate (windows) - source soda_venv/bin/activate (server, Linux) to enter the virtual environment
+pip install -r requirements.txt to install the requirements in the current environment
+
+Software te installeren:
+Install Microsoft C++ Build Tools
+Install PostgreSQL from the PostgreSQL website.
+
+Probleem met installatie Pyyaml==5.4.1:
+https://github.com/yaml/pyyaml/issues/724
+Opgelost (chatgpt) door: pip install PyYAML==5.4.1 --no-build-isolation
+problemen met snowflake iets..
+dan soda-sql-core geinstalleerd -> installeert niet de snowfake dependence bvb
+om te kijken of een package correct geinstalleerd is: pip show soda-core
+-> van een probleem in ander
+
+Starten van nieuw venv:
+https://docs.soda.io/soda-library/install.html
+Nog volgend commando bij 'No module namd 'distutils':
+pip install --upgrade setuptools (voor windows)
+pip install 
+(.venv) C:\Projects\dataquality_check>soda scan -d bikestore_db -c configuration.yml checks.yaml
+
+Update a requirements.txt file:
+pip freeze > requirements.txt
+
+Install from requirements file:
+py -m pip install -r requirements.txt

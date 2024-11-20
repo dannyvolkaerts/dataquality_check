@@ -1,8 +1,4 @@
 # data quality check
 
-Test the dbt platform
+Test different solutions
 
-
-### preparation
-
-pip install -r requirements.txt

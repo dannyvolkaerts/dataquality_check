@@ -1,0 +1,130 @@
+Category,Key,Value
+definitionName,,
+defaultDataSource,,bikestore_db
+dataTimestamp,,2024-11-20T13:44:14+00:00
+scanStartTimestamp,,2024-11-20T13:44:14+00:00
+scanEndTimestamp,,2024-11-20T13:44:15+00:00
+hasErrors,,False
+hasWarnings,,False
+hasFailures,,True
+metrics,identity,metric-bikestore_db-sales.order_items-row_count
+metrics,metricName,row_count
+metrics,value,4722
+metrics,dataSourceName,bikestore_db
+metrics,identity,metric-bikestore_db-total_sales > 10000-4de80d66
+metrics,metricName,total_sales > 10000
+metrics,value,4722.0
+metrics,dataSourceName,bikestore_db
+checks,identity,10d6414a
+checks,name,row_count < 30
+checks,type,generic
+checks,definition,"checks for sales.order_items:
+  row_count < 30"
+checks,resourceAttributes,[]
+checks,location,"{'filePath': 'checks.yaml', 'line': 2, 'col': 5}"
+checks,dataSource,bikestore_db
+checks,table,sales.order_items
+checks,filter,
+checks,column,
+checks,metrics,['metric-bikestore_db-sales.order_items-row_count']
+checks,outcome,fail
+checks,outcomeReasons,[]
+checks,archetype,
+checks,diagnostics,"{'blocks': [], 'value': 4722, 'fail': {'greaterThanOrEqual': 30.0}}"
+checks,identity,779e66c9
+checks,name,total_sales > 10000
+checks,type,generic
+checks,definition,"checks for sales.order_items:
+  - total_sales > 10000:
+      total_sales query: |-
+        SELECT
+          COUNT(*) as total_sales
+        FROM
+          sales.order_items
+"
+checks,resourceAttributes,[]
+checks,location,"{'filePath': 'checks.yaml', 'line': 3, 'col': 5}"
+checks,dataSource,bikestore_db
+checks,table,sales.order_items
+checks,filter,
+checks,column,
+checks,metrics,['metric-bikestore_db-total_sales > 10000-4de80d66']
+checks,outcome,fail
+checks,outcomeReasons,[]
+checks,archetype,
+checks,diagnostics,"{'blocks': [], 'value': 4722.0, 'fail': {'lessThanOrEqual': 10000.0}}"
+queries,name,1.bikestore_db.sales.order_items.aggregation[0]
+queries,dataSource,bikestore_db
+queries,table,sales.order_items
+queries,partition,
+queries,column,
+queries,sql,"SELECT 
+  COUNT_BIG(*) 
+FROM sales.order_items"
+queries,exception,
+queries,duration,0:00:00.010126
+queries,name,2.bikestore_db.user_defined_query[total_sales > 10000]
+queries,dataSource,bikestore_db
+queries,table,
+queries,partition,
+queries,column,
+queries,sql,"SELECT
+  COUNT(*) as total_sales
+FROM
+  sales.order_items"
+queries,exception,
+queries,duration,0:00:00.005028
+logs,level,INFO
+logs,message,Soda Core 3.4.1
+logs,timestamp,2024-11-20T13:44:14+00:00
+logs,index,1
+logs,doc,
+logs,location,
+logs,level,INFO
+logs,message,Scan summary:
+logs,timestamp,2024-11-20T13:44:15+00:00
+logs,index,2
+logs,doc,
+logs,location,
+logs,level,INFO
+logs,message,2/2 checks FAILED: 
+logs,timestamp,2024-11-20T13:44:15+00:00
+logs,index,3
+logs,doc,
+logs,location,
+logs,level,INFO
+logs,message,    sales.order_items in bikestore_db
+logs,timestamp,2024-11-20T13:44:15+00:00
+logs,index,4
+logs,doc,
+logs,location,
+logs,level,INFO
+logs,message,      row_count < 30 [FAILED]
+logs,timestamp,2024-11-20T13:44:15+00:00
+logs,index,5
+logs,doc,
+logs,location,
+logs,level,INFO
+logs,message,        check_value: 4722
+logs,timestamp,2024-11-20T13:44:15+00:00
+logs,index,6
+logs,doc,
+logs,location,
+logs,level,INFO
+logs,message,      total_sales > 10000 [FAILED]
+logs,timestamp,2024-11-20T13:44:15+00:00
+logs,index,7
+logs,doc,
+logs,location,
+logs,level,INFO
+logs,message,        check_value: 4722.0
+logs,timestamp,2024-11-20T13:44:15+00:00
+logs,index,8
+logs,doc,
+logs,location,
+logs,level,INFO
+logs,message,Oops! 2 failures. 0 warnings. 0 errors. 0 pass.
+logs,timestamp,2024-11-20T13:44:15+00:00
+logs,index,9
+logs,doc,
+logs,location,
